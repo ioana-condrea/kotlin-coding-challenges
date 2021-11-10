@@ -4,7 +4,7 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun countUpAndDown(n: Int): List<Int> {
-    TODO("not implemented")
+    return List(2*n+1){i -> if(i<=n) i else 2*n-i}
 }
 
 private class Test {

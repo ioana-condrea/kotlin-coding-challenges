@@ -4,7 +4,9 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun product(list: List<Int>): Int {
-    TODO("not implemented")
+    var product = 1
+    list.forEach { product *= it }
+    return product
 }
 
 private class Test {
