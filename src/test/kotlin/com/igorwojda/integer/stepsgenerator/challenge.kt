@@ -4,7 +4,15 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 fun generateSteps(n: Int): List<String> {
-    TODO("not implemented")
+    val steps = MutableList(n){ _ -> ""}
+    for(i in 0 until n){
+        for(j in 0 until n){
+            if(j<i+1){
+                steps[i]+="#"
+            }else steps[i]+=" "
+        }
+    }
+    return steps
 }
 
 private class Test {

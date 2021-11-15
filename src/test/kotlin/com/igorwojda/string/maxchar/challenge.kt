@@ -4,7 +4,15 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun maxOccurrentChar(str: String): Char? {
-    TODO("not implemented")
+    if(str.isEmpty()) return null
+    var (mostUsed, currentHighestNoTimes) = Pair(' ', 0)
+    str.forEach {
+        val noTimes = str.filter { c -> c==it }.length
+        if(noTimes > currentHighestNoTimes)
+            mostUsed = it
+            currentHighestNoTimes = noTimes
+    }
+    return mostUsed
 }
 
 private class Test {
