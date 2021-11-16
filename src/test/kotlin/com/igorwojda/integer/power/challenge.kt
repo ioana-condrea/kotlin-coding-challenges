@@ -2,10 +2,13 @@ package com.igorwojda.integer.power
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
-import kotlin.math.pow
+
+// infix fun Int.`^`(exponent: Int): Int = toDouble().pow(exponent).toInt()
 
 private fun power(base: Int, exponent: Int): Int {
-    return base.toDouble().pow(exponent).toInt()
+    //val times: (Int, Int) -> Int = Int::times
+    return List(exponent){base}.reduce(Int::times)
+    // return base `^` exponent
 }
 
 private class Test {
