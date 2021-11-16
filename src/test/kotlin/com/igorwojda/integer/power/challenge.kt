@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 
 private fun power(base: Int, exponent: Int): Int {
     //val times: (Int, Int) -> Int = Int::times
-    return List(exponent){base}.reduce(Int::times)
+    return List(exponent) { base }.reduce(Int::times)
     // return base `^` exponent
 }
 

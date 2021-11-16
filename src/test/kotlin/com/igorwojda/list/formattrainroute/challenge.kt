@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test
 
 private fun formatTrainRoute(stations: List<String>): String {
     val messagePrefix = "Train is calling at "
-    if(stations.size == 1){
+    if (stations.size == 1) {
         return "$messagePrefix${stations[0]}"
     }
     val lastStation = stations.takeLast(1)

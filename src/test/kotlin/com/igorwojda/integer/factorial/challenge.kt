@@ -3,7 +3,7 @@ package com.igorwojda.integer.factorial
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private tailrec fun factorial(n: Int, acc: Int=1): Int {
+private tailrec fun factorial(n: Int, acc: Int = 1): Int {
     // fold() solution runs in 22ms
     // return (1..n).toList().fold(1) { acc, i -> acc * i }
 
@@ -14,7 +14,7 @@ private tailrec fun factorial(n: Int, acc: Int=1): Int {
 
     // Tail rec solution runs in 19ms
     // Obs: it needed an additional parameter to pass the result in order to work as tail rec function
-    return if(n==0) return acc else factorial(n-1, n*acc)
+    return if (n == 0) return acc else factorial(n - 1, n * acc)
 }
 
 class RecursiveFactorial {
