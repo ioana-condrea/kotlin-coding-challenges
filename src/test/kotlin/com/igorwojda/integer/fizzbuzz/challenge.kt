@@ -4,8 +4,8 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun fizzBuzz(n: Int): List<String> {
-    return (1..n).toList().map{
-         when {
+    return (1..n).toList().map {
+        when {
             it == 1 && it == n -> it.toString()
             it % 3 == 0 && it % 5 == 0 -> "FizzBuzz"
             it % 3 == 0 && it % 5 != 0 -> "Fizz"

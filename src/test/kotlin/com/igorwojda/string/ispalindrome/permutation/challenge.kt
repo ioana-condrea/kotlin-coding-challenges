@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test
 private fun isPermutationPalindrome(str: String): Boolean {
     var oneCharAllowed = false
     str.forEach {
-        var noChars = str.filter{ c ->
-           c == it
+        val noChars = str.filter { c ->
+            c == it
         }.length
-        if(noChars==1 && !oneCharAllowed) oneCharAllowed = true
-            else if(noChars==1 && oneCharAllowed) return false
-        if (noChars>2) return false
+        if (noChars == 1 && !oneCharAllowed) oneCharAllowed = true
+        else if (noChars == 1 && oneCharAllowed) return false
+        if (noChars > 2) return false
     }
     return true
 }
