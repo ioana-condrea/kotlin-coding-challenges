@@ -4,7 +4,8 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun isPalindrome(str: String): Boolean {
-    TODO("not implemented")
+    val flipped =  str.reversed()
+    return flipped == str
 }
 
 private class Test {
