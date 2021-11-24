@@ -7,14 +7,11 @@ private fun encodeCaesarCipher(str: String, shift: Int): String {
     val shiftedString = str.toCharArray()
     val a = 'a'.toInt()
     val z = 'z'.toInt()
-    var newShift = shift
+    val newShift = shift % (z % a + 1)
     for (i in str.indices) {
-        if (shift > (z - a + 1)) {
-            newShift = shift % (z - a + 1)
-        }
         var asciiShifted = shiftedString[i].toInt() + newShift
         if (asciiShifted > z) {
-            asciiShifted = a + (asciiShifted - z) - 1
+            asciiShifted = a + (asciiShifted % z) - 1
         }
         shiftedString[i] = asciiShifted.toChar()
     }

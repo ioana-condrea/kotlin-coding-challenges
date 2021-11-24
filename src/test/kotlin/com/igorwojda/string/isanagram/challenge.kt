@@ -6,15 +6,13 @@ import org.junit.jupiter.api.Test
 private fun isAnagram(str1: String, str2: String): Boolean {
     val (stringContent1, _) = str1.partition { c -> c.isLetterOrDigit() }
     val (stringContent2, _) = str2.partition { c -> c.isLetterOrDigit() }
-    return stringContent1.toLowerCase()
+    val sortedChars1 = stringContent1.toLowerCase()
         .toCharArray()
         .sortedArray()
-        .contentEquals(
-            stringContent2
-                .toLowerCase()
-                .toCharArray()
-                .sortedArray()
-        )
+    val sortedChars2 = stringContent2.toLowerCase()
+        .toCharArray()
+        .sortedArray()
+    return sortedChars1.contentEquals(sortedChars2)
 }
 
 private class Test {

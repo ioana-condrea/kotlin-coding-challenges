@@ -2,13 +2,13 @@ package com.igorwojda.integer.reverse
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
+import kotlin.math.absoluteValue
+import kotlin.math.sign
 
 private fun reverseInt(i: Int): Int {
-    var s = i.toString()
-    return if (i < 0) {
-        s = s.substring(1, s.length)
-        (-1) * s.reversed().toInt()
-    } else s.reversed().toInt()
+    val sign = i.sign
+    val absValue = i.absoluteValue
+    return sign * absValue.toString().reversed().toInt()
 }
 
 private class Test {

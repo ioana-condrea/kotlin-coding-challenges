@@ -5,14 +5,15 @@ import org.junit.jupiter.api.Test
 
 private fun maxOccurrentChar(str: String): Char? {
     if (str.isEmpty()) return null
-    var (mostUsed, currentHighestNoTimes) = Pair(' ', 0)
-    str.forEach {
-        val noTimes = str.filter { c -> c == it }.length
-        if (noTimes > currentHighestNoTimes)
-            mostUsed = it
-        currentHighestNoTimes = noTimes
+    var (mostUsedChar, mostUsedCharCounter) = Pair(' ', 0)
+    str.forEach { char ->
+        val currentCharCounter = str.filter { c -> c == char }.length
+        if (currentCharCounter > mostUsedCharCounter) {
+            mostUsedChar = char
+        }
+        mostUsedCharCounter = currentCharCounter
     }
-    return mostUsed
+    return mostUsedChar
 }
 
 private class Test {
