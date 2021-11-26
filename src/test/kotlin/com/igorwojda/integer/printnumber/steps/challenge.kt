@@ -4,7 +4,6 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun printNumber(n: Int, step: Int = 1): List<Int> {
-    if(n==0) return listOf()
     return (n downTo 1 step step).toList()
 }
 

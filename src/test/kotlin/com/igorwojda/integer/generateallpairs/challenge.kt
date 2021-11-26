@@ -4,11 +4,10 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun getAllPairs(n: Int): List<Pair<Int, Int>> {
-    //return List((n+1)*(n+1)){i -> Pair(i,i)}
-    val listOfPairs = ArrayList<Pair<Int, Int>>()
-    for(i in 0..n){
-        for(j in 0..n){
-            listOfPairs.add(Pair(i,j))
+    val listOfPairs = mutableListOf<Pair<Int, Int>>()
+    (0..n).forEach { i ->
+        (0..n).forEach { j ->
+            listOfPairs.add(Pair(i, j))
         }
     }
     return listOfPairs
