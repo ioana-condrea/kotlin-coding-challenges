@@ -4,7 +4,16 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun maxOccurrentChar(str: String): Char? {
-    TODO("not implemented")
+    if (str.isEmpty()) return null
+    var (mostUsedChar, mostUsedCharCounter) = Pair(' ', 0)
+    str.forEach { char ->
+        val currentCharCounter = str.filter { c -> c == char }.length
+        if (currentCharCounter > mostUsedCharCounter) {
+            mostUsedChar = char
+        }
+        mostUsedCharCounter = currentCharCounter
+    }
+    return mostUsedChar
 }
 
 private class Test {

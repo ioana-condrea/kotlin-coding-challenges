@@ -4,7 +4,13 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun isTolerantPalindrome(str: String, characterRemoved: Boolean = false): Boolean {
-    TODO("not implemented")
+    val (lettersOrDigits, nonLettersOrDigits) = str.partition { c -> c.isLetterOrDigit() }
+    val (letters, digits) = lettersOrDigits.partition { c -> c.isLetter() }
+    return if (nonLettersOrDigits.length > 1 || (letters.length > 1 && digits.length > 1)) {
+        false
+    } else {
+        letters.reversed() == letters && digits.reversed() == digits
+    }
 }
 
 private class Test {

@@ -4,7 +4,18 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun encodeCaesarCipher(str: String, shift: Int): String {
-    TODO("not implemented")
+    val shiftedString = str.toCharArray()
+    val a = 'a'.toInt()
+    val z = 'z'.toInt()
+    val newShift = shift % (z % a + 1)
+    for (i in str.indices) {
+        var asciiShifted = shiftedString[i].toInt() + newShift
+        if (asciiShifted > z) {
+            asciiShifted = a + (asciiShifted % z) - 1
+        }
+        shiftedString[i] = asciiShifted.toChar()
+    }
+    return shiftedString.joinToString("")
 }
 
 private class Test {
